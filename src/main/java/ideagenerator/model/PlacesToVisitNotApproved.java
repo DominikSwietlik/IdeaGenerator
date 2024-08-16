@@ -22,7 +22,7 @@ public class PlacesToVisitNotApproved {
     private double timeToPlaceGd;
     private double timeToPlaceSz;
     private double timeToPlacePoz;
-    private double timeToSpendMim;
+    private double timeToSpendMin;
     private double timeToSpendMax;
 
     public Long getId() {
@@ -105,12 +105,12 @@ public class PlacesToVisitNotApproved {
         this.timeToPlacePoz = timeToPlacePoz;
     }
 
-    public double getTimeToSpendMim() {
-        return timeToSpendMim;
+    public double getTimeToSpendMin() {
+        return timeToSpendMin;
     }
 
-    public void setTimeToSpendMim(double timeToSpendMim) {
-        this.timeToSpendMim = timeToSpendMim;
+    public void setTimeToSpendMin(double timeToSpendMin) {
+        this.timeToSpendMin = timeToSpendMin;
     }
 
     public double getTimeToSpendMax() {
