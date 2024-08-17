@@ -3,6 +3,7 @@ package ideagenerator.controller;
 import ideagenerator.model.PlacesToVisit;
 import ideagenerator.repository.PlacesToVisitRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.transaction.Transactional;
 import java.util.List;
 
-@RestController
+@Controller
 @RequestMapping("/placeToVisit")
 public class PlacesToVisitRestController {
 

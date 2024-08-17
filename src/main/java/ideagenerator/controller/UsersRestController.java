@@ -1,27 +1,43 @@
 package ideagenerator.controller;
 
+import org.springframework.ui.Model;
 import ideagenerator.model.Users;
 import ideagenerator.repository.UsersRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.apache.catalina.User;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
 
-@RestController
+@Controller
 @RequestMapping("/users")
 public class UsersRestController {
 
-    @Autowired
-    private UsersRepository usersRepository;
 
-    @GetMapping
-    public List<Users> getAllUsers() {
-        return usersRepository.findAll();
+    private final static Logger logger = LoggerFactory.getLogger(UsersRestController.class);
+    private final UsersRepository usersRepository;
+
+    public UsersRestController(UsersRepository usersRepository) {
+        this.usersRepository = usersRepository;
     }
 
-    @GetMapping("/{id}")
-    public Optional<Users> getUserById(@PathVariable Long id) {
-        return usersRepository.findById(id);
+    @GetMapping("")
+    public String allUsers(Model model) {
+        List<Users> users = usersRepository.findAll();
+        model.addAttribute("users", users);
+        return "allUsers";
+    }
+    @PostMapping("searchById")
+    public String userById(@RequestParam("id") Long id, Model model) {
+        Optional<Users> userOptional = usersRepository.findById(id);
+        if (userOptional.isPresent()) {
+            model.addAttribute("user", userOptional.get());
+        } else {
+            model.addAttribute("error", "User not found with id: " + id);
+        }
+        return "userDetails";
     }
 }

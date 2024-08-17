@@ -11,18 +11,7 @@ import java.util.Optional;
 
 public interface PlacesToVisitRepository extends JpaRepository<PlacesToVisit, Long> {
 
-    @Query("")
-    PlacesToVisit add(@Param("description") String description,
-                      @Param("place") String place,
-                      @Param("timeToPlaceGd") double timeToPlaceGd,
-                      @Param("timeToPlaceKat") double timeToPlaceKat,
-                      @Param("timeToPlaceKr") double timeToPlaceKr,
-                      @Param("timeToPlacePoz") double timeToPlacePoz,
-                      @Param("timeToPlaceSz") double timeToPlaceSz,
-                      @Param("timeToPlaceWaw") double timeToPlaceWaw,
-                      @Param("timeToSpendMax") double timeToSpendMax,
-                      @Param("timeToSpendMin") double timeToSpendMin,
-                      @Param("type") Long type);
+
     @Query("SELECT p FROM PlacesToVisit p")
     List<PlacesToVisit> findAll();
     @Query("SELECT p FROM PlacesToVisit p WHERE p.id = :id")
