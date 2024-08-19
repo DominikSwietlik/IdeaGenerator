@@ -27,13 +27,12 @@
             <td>${user.lastName}</td>
             <td>${user.password}</td>
             <td>${user.username}</td>
-
         </tr>
     </c:forEach>
 </table>
 
 <form class="padding-small text-center" action="/users/searchById" method="post">
-    <input type="text" id="id" name="id" placeholder="Podaj id" required>
+    <input type="number" id="id" name="id" placeholder="Podaj id" required>
     <button class="btn btn-color rounded-0" type="submit">Zaloguj</button>
 </form>
 </body>
