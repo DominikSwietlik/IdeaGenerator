@@ -17,7 +17,6 @@ import java.util.Optional;
 public class UsersRestController {
 
 
-    private final static Logger logger = LoggerFactory.getLogger(UsersRestController.class);
     private final UsersRepository usersRepository;
 
     public UsersRestController(UsersRepository usersRepository) {

@@ -17,16 +17,31 @@ public interface PlacesToVisitRepository extends JpaRepository<PlacesToVisit, Lo
     @Query("SELECT p FROM PlacesToVisit p WHERE p.id = :id")
     Optional<PlacesToVisit> findById(@Param("id") Long id);
     @Query("SELECT p FROM PlacesToVisit p WHERE p.timeToSpendMax >= (:time + (2* p.timeToPlaceGd)) AND (p.timeToSpendMin + (2*p.timeToPlaceGd)) <= :time AND p.type = :type")
-    List<PlacesToVisit> findByTimeRangeGd(@Param("time") double time, @Param("type") double type);
+    List<PlacesToVisit> findByTimeRangeGd(@Param("time") double time, @Param("type") Long type);
     @Query("SELECT p FROM PlacesToVisit p WHERE p.timeToSpendMax >= (:time + (2* p.timeToPlaceKat)) AND (p.timeToSpendMin + (2*p.timeToPlaceKat)) <= :time AND p.type = :type")
-    List<PlacesToVisit> findByTimeRangeKat(@Param("time") double time, @Param("type") double type);
+    List<PlacesToVisit> findByTimeRangeKat(@Param("time") double time, @Param("type") Long type);
     @Query("SELECT p FROM PlacesToVisit p WHERE p.timeToSpendMax >= (:time + (2* p.timeToPlaceKr)) AND (p.timeToSpendMin + (2*p.timeToPlaceKr)) <= :time AND p.type = :type")
-    List<PlacesToVisit> findByTimeRangeKr(@Param("time") double time, @Param("type") double type);
+    List<PlacesToVisit> findByTimeRangeKr(@Param("time") double time, @Param("type") Long type);
     @Query("SELECT p FROM PlacesToVisit p WHERE p.timeToSpendMax >= (:time + (2* p.timeToPlacePoz)) AND (p.timeToSpendMin + (2*p.timeToPlacePoz)) <= :time AND p.type = :type")
-    List<PlacesToVisit> findByTimeRangePoz(@Param("time") double time, @Param("type") double type);
+    List<PlacesToVisit> findByTimeRangePoz(@Param("time") double time, @Param("type") Long type);
     @Query("SELECT p FROM PlacesToVisit p WHERE p.timeToSpendMax >= (:time + (2* p.timeToPlaceSz)) AND (p.timeToSpendMin + (2*p.timeToPlaceSz)) <= :time AND p.type = :type")
-    List<PlacesToVisit> findByTimeRangeSz(@Param("time") double time, @Param("type") double type);
+    List<PlacesToVisit> findByTimeRangeSz(@Param("time") double time, @Param("type") Long type);
     @Query("SELECT p FROM PlacesToVisit p WHERE p.timeToSpendMax >= (:time + (2* p.timeToPlaceWaw)) AND (p.timeToSpendMin + (2*p.timeToPlaceWaw)) <= :time AND p.type = :type")
-    List<PlacesToVisit> findByTimeRangeWaw(@Param("time") double time, @Param("type") double type);
+    List<PlacesToVisit> findByTimeRangeWaw(@Param("time") double time, @Param("type") Long type);
+
+    @Query("SELECT p FROM PlacesToVisit p WHERE p.timeToSpendMax >= (:time + (2* p.timeToPlaceGd)) AND (p.timeToSpendMin + (2*p.timeToPlaceGd)) <= :time ")
+    List<PlacesToVisit> findByTimeRangeGd(@Param("time") double time);
+    @Query("SELECT p FROM PlacesToVisit p WHERE p.timeToSpendMax >= (:time + (2* p.timeToPlaceKat)) AND (p.timeToSpendMin + (2*p.timeToPlaceKat)) <= :time")
+    List<PlacesToVisit> findByTimeRangeKat(@Param("time") double time);
+    @Query("SELECT p FROM PlacesToVisit p WHERE p.timeToSpendMax >= (:time + (2* p.timeToPlaceKr)) AND (p.timeToSpendMin + (2*p.timeToPlaceKr)) <= :time")
+    List<PlacesToVisit> findByTimeRangeKr(@Param("time") double time);
+    @Query("SELECT p FROM PlacesToVisit p WHERE p.timeToSpendMax >= (:time + (2* p.timeToPlacePoz)) AND (p.timeToSpendMin + (2*p.timeToPlacePoz)) <= :time")
+    List<PlacesToVisit> findByTimeRangePoz(@Param("time") double time);
+    @Query("SELECT p FROM PlacesToVisit p WHERE p.timeToSpendMax >= (:time + (2* p.timeToPlaceSz)) AND (p.timeToSpendMin + (2*p.timeToPlaceSz)) <= :time")
+    List<PlacesToVisit> findByTimeRangeSz(@Param("time") double time);
+    @Query("SELECT p FROM PlacesToVisit p WHERE p.timeToSpendMax >= (:time + (2* p.timeToPlaceWaw)) AND (p.timeToSpendMin + (2*p.timeToPlaceWaw)) <= :time")
+    List<PlacesToVisit> findByTimeRangeWaw(@Param("time") double time);
+
+
 
 }
