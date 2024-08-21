@@ -26,7 +26,6 @@ public class LoginController {
             @RequestParam String username,
             @RequestParam String password,
             HttpSession session) {
-
         Users user = userRepository.findByUsername(username);
 
         if (user != null && user.getPassword().equals(password)) {
