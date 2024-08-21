@@ -1,10 +1,14 @@
 package ideagenerator.model;
 
+
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 import javax.persistence.GeneratedValue;
+import java.util.Collection;
+import java.util.List;
 
 @Entity
 @Table(name = "Users")
@@ -19,6 +23,10 @@ public class Users {
     private String email;
     private Boolean active;
 
+    public Users() {
+
+    }
+
     public Long getId() {
         return id;
     }
@@ -31,9 +39,11 @@ public class Users {
         return username;
     }
 
+
     public void setUsername(String username) {
         this.username = username;
     }
+
 
     public String getPassword() {
         return password;
@@ -74,4 +84,11 @@ public class Users {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    public Users(String username, String password) {
+        super();
+        this.username = username;
+        this.password = password;
+    }
+
 }

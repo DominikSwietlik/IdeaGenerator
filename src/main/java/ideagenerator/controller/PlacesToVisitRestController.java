@@ -64,14 +64,37 @@ public class PlacesToVisitRestController {
         return "placeToVisitDetails";
 
 }
-
+    @GetMapping("add")
+    public String addPlaceToVisit() {
+        return "addPlacesToVisit";
+    }
     @Transactional
-    @GetMapping("/{description}/{place}/{timeToPlaceGd}/{timeToPlaceKat}/{timeToPlaceKr}/{timeToPlacePoz}/{timeToPlaceSz}/{timeToPlaceWaw}")
-    public void addPlaceToVisit(@PathVariable String description) {
+    @PostMapping("add")
+    public String addPlaceToVisitV(@RequestParam("description") String description,
+                                @RequestParam("place") String place,
+                                @RequestParam("time_to_place_gd") double time_to_place_gd,
+                                @RequestParam("time_to_place_kat") double time_to_place_kat,
+                                @RequestParam("time_to_place_kr") double time_to_place_kr,
+                                   @RequestParam("time_to_place_poz") double time_to_place_poz,
+                                @RequestParam("time_to_place_sz") double time_to_place_sz,
+                                @RequestParam("time_to_place_waw") double time_to_place_waw,
+                                @RequestParam("time_to_spend_min") double time_to_spend_min,
+                                @RequestParam("time_to_spend_max") double time_to_spend_max ,
+                                @RequestParam("type") Long type) {
         PlacesToVisit placeToVisit = new PlacesToVisit();
         placeToVisit.setDescription(description);
-
+        placeToVisit.setPlace(place);
+        placeToVisit.setTimeToPlaceGd(time_to_place_gd);
+        placeToVisit.setTimeToPlaceKat(time_to_place_kat);
+        placeToVisit.setTimeToPlaceKr(time_to_place_kr);
+        placeToVisit.setTimeToPlacePoz(time_to_place_poz);
+        placeToVisit.setTimeToPlaceSz(time_to_place_sz);
+        placeToVisit.setTimeToPlaceWaw(time_to_place_waw);
+        placeToVisit.setTimeToSpendMin(time_to_spend_min);
+        placeToVisit.setTimeToSpendMax(time_to_spend_max);
+        placeToVisit.setType(type);
         placesToVisitRepository.save(placeToVisit);
+        return "addPlacesToVisit";
     }
 
 }

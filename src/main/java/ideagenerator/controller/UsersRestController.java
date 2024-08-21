@@ -9,6 +9,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
 import java.util.Optional;
 
@@ -24,7 +25,10 @@ public class UsersRestController {
     }
 
     @GetMapping("")
-    public String allUsers(Model model) {
+    public String allUsers(Model model, HttpSession session) {
+        if (session.getAttribute("username") == null) {
+            return "redirect:/login";
+        }
         List<Users> users = usersRepository.findAll();
         model.addAttribute("users", users);
         return "allUsers";
