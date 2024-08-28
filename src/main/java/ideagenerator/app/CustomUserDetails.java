@@ -1,4 +1,4 @@
-/*package ideagenerator.app;
+package ideagenerator.app;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -58,4 +58,4 @@ public class CustomUserDetails implements UserDetails {
     public boolean isEnabled() {
         return true;
     }
-}*/
+}

@@ -1,5 +1,6 @@
 package ideagenerator.controller;
-import ideagenerator.model.Users;
+
+/*import ideagenerator.model.Users;
 import ideagenerator.repository.UsersRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -42,8 +43,7 @@ public class LoginController {
         return "redirect:/login";
     }
 }
-
-/*
+*/
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -56,5 +56,5 @@ public class LoginController {
     public String showLoginPage() {
         return "login";
     }
-}*/
+}
 

@@ -1,4 +1,4 @@
-/*package ideagenerator.UserAuthService;
+package ideagenerator.UserAuthService;
 
 import ideagenerator.dto.UserDto;
 import ideagenerator.model.Users;
@@ -31,4 +31,4 @@ public class UserServiceImpl implements UserService {
         return userRepository.save(user);
     }
 
-}*/
+}

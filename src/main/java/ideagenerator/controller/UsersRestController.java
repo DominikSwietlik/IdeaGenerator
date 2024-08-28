@@ -1,4 +1,4 @@
-package ideagenerator.controller;
+/*package ideagenerator.controller;
 
 import org.springframework.ui.Model;
 import ideagenerator.model.Users;
@@ -43,4 +43,4 @@ public class UsersRestController {
         }
         return "userDetails";
     }
-}
+}*/

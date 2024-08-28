@@ -1,5 +1,5 @@
 <!-- login.jsp -->
-<form action="login" method="post">
+<form action="/+login" method="post">
     <label for="username">Username:</label>
     <input type="text" id="username" name="username" required>
     <label for="password">Password:</label>

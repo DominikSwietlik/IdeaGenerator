@@ -1,4 +1,4 @@
-/*package ideagenerator.UserAuthService;
+package ideagenerator.UserAuthService;
 
 
 import ideagenerator.dto.UserDto;
@@ -9,4 +9,4 @@ public interface UserService {
 
     Users save(UserDto userDto);
 
-}*/
+}

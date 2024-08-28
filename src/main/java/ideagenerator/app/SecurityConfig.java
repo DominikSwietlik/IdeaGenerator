@@ -1,4 +1,4 @@
-/*package ideagenerator.app;
+package ideagenerator.app;
 
 import ideagenerator.service.CustomUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,17 +13,13 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
-@Configuration
-@EnableWebSecurity
+
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
-    @Autowired
+
     private CustomUserDetailsService customUserDetailsService;
 
-    @Bean
-    public PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
-    }
+
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -47,8 +43,5 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .permitAll();
     }
 
-    @Autowired
-    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(customUserDetailsService).passwordEncoder(passwordEncoder());
-    }
-}*/
+
+}

@@ -34,12 +34,12 @@ public class PlacesToVisitNotapprovedController {
 
 
     @GetMapping("add")
-    public String addPlaceToVisitNotApproved() {
+    public String DisplayAddPlaceToVisitNotApproved() {
         return "addPlacesToVisitNotApproved";
     }
     @Transactional
     @PostMapping("add")
-    public String addPlaceToVisitV(@RequestParam("description") String description,
+    public String addPlaceToVisitNotApproved(@RequestParam("description") String description,
                                 @RequestParam("place") String place,
                                 @RequestParam("time_to_place_gd") double time_to_place_gd,
                                 @RequestParam("time_to_place_kat") double time_to_place_kat,
@@ -63,7 +63,7 @@ public class PlacesToVisitNotapprovedController {
         placeToVisitNotApproved.setTimeToSpendMax(time_to_spend_max);
         placeToVisitNotApproved.setType(type);
         placesToVisitNotApprovedRepository.save(placeToVisitNotApproved);
-        return "addPlacesToVisit";
+        return "addPlacesToVisitNotApproved";
     }
 
 }

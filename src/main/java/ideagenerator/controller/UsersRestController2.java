@@ -1,4 +1,4 @@
-/*package ideagenerator.controller;
+package ideagenerator.controller;
 
 import ideagenerator.UserAuthService.UserService;
 import ideagenerator.dto.UserDto;
@@ -78,4 +78,4 @@ public class UsersRestController2 {
         }
         return "userDetails";
     }
-}*/
+}

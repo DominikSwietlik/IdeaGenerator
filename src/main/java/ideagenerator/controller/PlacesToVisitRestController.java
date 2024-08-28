@@ -1,6 +1,7 @@
 package ideagenerator.controller;
 
 import ideagenerator.model.PlacesToVisit;
+import ideagenerator.model.PlacesToVisitNotApproved;
 import ideagenerator.repository.PlacesToVisitRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -65,12 +66,28 @@ public class PlacesToVisitRestController {
 
 }
     @GetMapping("add")
-    public String addPlaceToVisit() {
+    public String DisplayAddPlaceToVisit() {
         return "addPlacesToVisit";
     }
     @Transactional
     @PostMapping("add")
-    public String addPlaceToVisitV(@RequestParam("description") String description,
+    public String addPlaceToVisit(PlacesToVisitNotApproved placesToVisitNotApproved){
+        PlacesToVisit placeToVisit = new PlacesToVisit();
+        placeToVisit.setDescription(placesToVisitNotApproved.getDescription());
+        placeToVisit.setPlace(placesToVisitNotApproved.getPlace());
+        placeToVisit.setTimeToPlaceGd(placesToVisitNotApproved.getTimeToPlaceGd());
+        placeToVisit.setTimeToPlaceKat(placesToVisitNotApproved.getTimeToPlaceKat());
+        placeToVisit.setTimeToPlaceKr(placesToVisitNotApproved.getTimeToPlaceKr());
+        placeToVisit.setTimeToPlacePoz(placesToVisitNotApproved.getTimeToPlacePoz());
+        placeToVisit.setTimeToPlaceSz(placesToVisitNotApproved.getTimeToPlaceSz());
+        placeToVisit.setTimeToPlaceWaw(placesToVisitNotApproved.getTimeToPlaceWaw());
+        placeToVisit.setTimeToSpendMin(placesToVisitNotApproved.getTimeToSpendMin());
+        placeToVisit.setTimeToSpendMax(placesToVisitNotApproved.getTimeToSpendMax());
+        placeToVisit.setType(placesToVisitNotApproved.getType());
+        placesToVisitRepository.save(placeToVisit);
+        return "addPlacesToVisit";
+    }
+    /*public String addPlaceToVisit(@RequestParam("description") String description,
                                 @RequestParam("place") String place,
                                 @RequestParam("time_to_place_gd") double time_to_place_gd,
                                 @RequestParam("time_to_place_kat") double time_to_place_kat,
@@ -95,6 +112,6 @@ public class PlacesToVisitRestController {
         placeToVisit.setType(type);
         placesToVisitRepository.save(placeToVisit);
         return "addPlacesToVisit";
-    }
+    }*/
 
 }
