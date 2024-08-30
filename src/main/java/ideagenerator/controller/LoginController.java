@@ -1,6 +1,5 @@
 package ideagenerator.controller;
-
-/*import ideagenerator.model.Users;
+import ideagenerator.model.Users;
 import ideagenerator.repository.UsersRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -31,7 +30,7 @@ public class LoginController {
 
         if (user != null && user.getPassword().equals(password)) {
             session.setAttribute("username", username);
-            return new ModelAndView("redirect");
+            return new ModelAndView("redirect:/index");
         } else {
             return new ModelAndView("login", "error", "Invalid username or password");
         }
@@ -43,7 +42,8 @@ public class LoginController {
         return "redirect:/login";
     }
 }
-*/
+
+/*
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -56,5 +56,4 @@ public class LoginController {
     public String showLoginPage() {
         return "login";
     }
-}
-
+}*/

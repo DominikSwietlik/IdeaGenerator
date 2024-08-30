@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.*;
 
 
 import javax.transaction.Transactional;
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.Random;
 
 @Controller
@@ -85,8 +85,10 @@ public class PlacesToVisitRestController {
         placeToVisit.setTimeToSpendMax(placesToVisitNotApproved.getTimeToSpendMax());
         placeToVisit.setType(placesToVisitNotApproved.getType());
         placesToVisitRepository.save(placeToVisit);
-        return "addPlacesToVisit";
+        return "redirect:/placeToVisitNotApproved";
     }
+
+
     /*public String addPlaceToVisit(@RequestParam("description") String description,
                                 @RequestParam("place") String place,
                                 @RequestParam("time_to_place_gd") double time_to_place_gd,

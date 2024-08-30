@@ -1,4 +1,4 @@
-package ideagenerator.service;
+/*package ideagenerator.service;
 
 import ideagenerator.app.CustomUserDetails;
 import ideagenerator.model.Users;
@@ -38,4 +38,4 @@ public class CustomUserDetailsService implements UserDetailsService {
         return Arrays.asList(new SimpleGrantedAuthority("USER"));
     }
 
-}
+}*/

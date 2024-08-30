@@ -2,10 +2,10 @@
 
 <html>
 <head>
-    <title>User Details</title>
+    <title>PomysłNa</title>
 </head>
 <body>
-<h1>User Details</h1>
+<h1>Dane użytkownika</h1>
 <c:if test="${not empty user}">
 
     <table border="1">

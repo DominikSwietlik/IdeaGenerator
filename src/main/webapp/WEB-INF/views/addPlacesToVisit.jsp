@@ -1,11 +1,13 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <html>
 <head>
-    <title>Add place</title>
+    <meta charset="UTF-8">
+    <title>PomysłNa</title>
 </head>
 <body>
-<h1>Searcher</h1>
+<h1>Wyszukaj</h1>
 <form class="padding-small text-center" action="/placeToVisit/add" method="post">
     <input type="text" id="description" name="description" placeholder="Opis" required> <BR>
     <input type="text" id="place" name="place" placeholder="miejsce" required> <BR>

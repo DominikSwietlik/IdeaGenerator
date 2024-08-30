@@ -1,11 +1,12 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <html>
 <head>
-    <title>All place to visit</title>
+    <title>PomysłNa</title>
 </head>
 <body>
-<h1>Searcher</h1>
+<h1>Wyszukaj miejsca dla siebie</h1>
 <form class="padding-small text-center" action="/placeToVisit/search" method="post">
         <input type="number" id="time" name="time" placeholder="ile czasu?" required> <BR>
         Wybierz miejscowość początkową<BR>
@@ -26,7 +27,7 @@
     <button class="btn btn-color rounded-0" type="submit">Wyszukaj</button>
 </form>
 
-<h1>All place to visit</h1>
+<h1>Wszyskie miejsca do odwiedzenia</h1>
 <table border="1">
     <tr>
         <th>Id</th>
