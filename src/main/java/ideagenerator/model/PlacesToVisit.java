@@ -1,11 +1,6 @@
 package ideagenerator.model;
 
-import javax.persistence.Entity;
-
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "placesToVisit")
@@ -15,7 +10,9 @@ public class PlacesToVisit {
     private Long id;
     private String place;
     private String description;
-    private Long type;
+    @ManyToOne
+    @JoinColumn(name = "type_id", referencedColumnName = "id")
+    private Type type;
     private double timeToPlaceKat;
     private double timeToPlaceWaw;
     private double timeToPlaceKr;
@@ -49,11 +46,8 @@ public class PlacesToVisit {
         this.description = description;
     }
 
-    public Long getType() {
-        return type;
-    }
-
-    public void setType(Long type) {
+    public Type getType() {return type; }
+    public void setType(Type type) {
         this.type = type;
     }
 

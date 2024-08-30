@@ -25,14 +25,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/", "/login", "/logout", "/placeToVisit").permitAll() // Pozwól na dostęp do /, /login, /logout, i /placeToVisit bez logowania
-                .antMatchers("/users").authenticated() // Wymagaj logowania dla /users
-                .anyRequest().permitAll() // Pozwól na dostęp do wszystkich innych żądań bez logowania
+                .antMatchers("/", "/login", "/logout", "/placeToVisit").permitAll()
+                .antMatchers("/users").authenticated()
+                .anyRequest().permitAll()
                 .and()
                 .formLogin()
                 .loginPage("/login")
                 .loginProcessingUrl("/login")
-                .defaultSuccessUrl("/placeToVisit", true) // Po udanym logowaniu przekieruj do /placeToVisit
+                .defaultSuccessUrl("/placeToVisit", true)
                 .permitAll()
                 .and()
                 .logout()

@@ -6,6 +6,12 @@
     <title>PomysłNa</title>
 </head>
 <body>
+<div class="navbar">
+    <a href="/">Strona Główna</a>
+    <a href="/placeToVisit">Miejsca do Zwiedzania</a>
+    <a href="/placeToVisitNotApproved">Miejsca Niezatwierdzone</a>
+    <a href="/login">Logowanie</a>
+</div>
 <h1>Wybraliśmy dla Ciebie</h1>
 <table border="1">
     <tr>

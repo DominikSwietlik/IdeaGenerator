@@ -6,6 +6,12 @@
     <title>PomysłNa</title>
 </head>
 <body>
+<div class="navbar">
+    <a href="/">Strona Główna</a>
+    <a href="/placeToVisit">Miejsca do Zwiedzania</a>
+    <a href="/placeToVisitNotApproved">Miejsca Niezatwierdzone</a>
+    <a href="/login">Logowanie</a>
+</div>
 <h1>Wyszukaj miejsca dla siebie</h1>
 <form class="padding-small text-center" action="/placeToVisit/search" method="post">
         <input type="number" id="time" name="time" placeholder="ile czasu?" required> <BR>
@@ -33,6 +39,8 @@
         <th>Id</th>
         <th>Place</th>
         <th>description</th>
+        <th>type</th>
+
     </tr>
 
     <c:forEach var="placeToVisit" items="${placesToVisit}">
@@ -40,6 +48,7 @@
             <td>${placeToVisit.id}</td>
             <td>${placeToVisit.place}</td>
             <td>${placeToVisit.description}</td>
+            <td>${placeToVisit.type}</td>
         </tr>
     </c:forEach>
 </table>

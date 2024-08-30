@@ -6,6 +6,18 @@
     <title>PomysłNa</title>
 </head>
 <body>
+<div class="navbar">
+    <a href="/">Strona Główna</a>
+    <a href="/placeToVisit">Miejsca do Zwiedzania</a>
+    <a href="/placeToVisitNotApproved">Miejsca Niezatwierdzone</a>
+    <a href="/login">Logowanie</a>
+</div>
+<div class="navbar">
+    <a href="/">Strona Główna</a>
+    <a href="/placeToVisit">Miejsca do Zwiedzania</a>
+    <a href="/placeToVisitNotApproved">Miejsca Niezatwierdzone</a>
+    <a href="/login">Logowanie</a>
+</div>
 <h1>Dodaj nowe miejsce</h1>
 <form class="padding-small text-center" action="/placeToVisitNotApproved/add" method="post">
 

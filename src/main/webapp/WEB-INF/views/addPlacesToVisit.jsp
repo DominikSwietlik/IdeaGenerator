@@ -7,6 +7,12 @@
     <title>PomysłNa</title>
 </head>
 <body>
+<div class="navbar">
+    <a href="/">Strona Główna</a>
+    <a href="/placeToVisit">Miejsca do Zwiedzania</a>
+    <a href="/placeToVisitNotApproved">Miejsca Niezatwierdzone</a>
+    <a href="/login">Logowanie</a>
+</div>
 <h1>Wyszukaj</h1>
 <form class="padding-small text-center" action="/placeToVisit/add" method="post">
     <input type="text" id="description" name="description" placeholder="Opis" required> <BR>

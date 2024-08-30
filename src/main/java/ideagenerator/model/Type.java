@@ -1,11 +1,7 @@
 package ideagenerator.model;
 
-import javax.persistence.Entity;
-
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "type")
@@ -15,6 +11,8 @@ public class Type {
     private Long id;
     private String name;
 
+    @OneToMany(mappedBy = "type")
+    private Set<PlacesToVisit> placesToVisit;
     public String getName() {
         return name;
     }
@@ -29,5 +27,16 @@ public class Type {
 
     public void setId(Long id) {
         this.id = id;
+    }
+    public Set<PlacesToVisit> getPlacesToVisit() {
+        return placesToVisit;
+    }
+
+    public void setPlacesToVisit(Set<PlacesToVisit> placesToVisit) {
+        this.placesToVisit = placesToVisit;
+    }
+    @Override
+    public String toString() {
+        return name;
     }
 }
